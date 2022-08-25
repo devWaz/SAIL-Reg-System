@@ -24,7 +24,7 @@
 .register-form form {
     border: 2px solid;
     width: 30vw;
-    height: 65vh;
+    min-height: 65vh;
     display:flex;
     flex-direction: column;
     padding: .5rem;

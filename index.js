@@ -19,10 +19,13 @@ app.use("/img" , express.static(path.resolve(__dirname, "assests/img")))
 app.use("/js" , express.static(path.resolve(__dirname, "assests/js")))
 
 
-
 app.get("/" , ((req , res) => {
     res.render('index')
 }));
+
+app.get('/register' , (req , res) => {
+    res.render('register')
+})
 
 app.listen(PORT , () => {
     console.log(`Server started at port ${PORT}`);
