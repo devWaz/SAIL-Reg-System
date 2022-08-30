@@ -4,9 +4,13 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
+const userroutes = require("./server/routes/routes")
+const connectDB = require("./server/db/connection")
 
 dotenv.config({path: "config.env"})
 let PORT = process.env.PORT || 4040
+
+connectDB()
 
 app.use(morgan("tiny"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,13 +23,7 @@ app.use("/img" , express.static(path.resolve(__dirname, "assests/img")))
 app.use("/js" , express.static(path.resolve(__dirname, "assests/js")))
 
 
-app.get("/" , ((req , res) => {
-    res.render('index')
-}));
-
-app.get('/register' , (req , res) => {
-    res.render('register')
-})
+app.use(userroutes)
 
 app.listen(PORT , () => {
     console.log(`Server started at port ${PORT}`);
