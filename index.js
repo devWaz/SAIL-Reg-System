@@ -12,7 +12,7 @@ let PORT = process.env.PORT || 4040
 
 connectDB()
 
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine' , 'ejs')

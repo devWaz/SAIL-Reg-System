@@ -2,14 +2,14 @@
     <div class="register-form">
         <h1>SAIL REGISTRATION SYSTEM</h1>
         <a href="/register"><button>Entry</button></a>
-        <form method="post">
+        <form method="post" action="/sail/users">
             <div>
                 <label for="name">Name</label>
                 <input type="text" name="name" id="">
             </div>
             <div>
                 <label for="team">Team</label>
-                <input type="text" name="" id="">
+                <input type="text" name="team" id="">
             </div>
             <div>
                 <label for="stack">Stack</label>
@@ -19,6 +19,7 @@
                 <label for="gender">Gender</label>
                 <input type="text" name="gender" id="">
             </div>
-            <button href="/addUser">REGISTER</button>
+            <button href="/sail/users">ADD</button>
         </form>
+        <%= users %>
     </div>
