@@ -5,10 +5,7 @@ const axios = require("axios");
 
 //landing page
 routes.get('/' , (req , res) => {
-    axios.get('http://localhost70001/sail/users')
-    .then(res=>{
-        res.render('index' , {users: res.data})
-    })
+    res.render('index' , {users: res.data})
 });
 
 
